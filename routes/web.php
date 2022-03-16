@@ -12,5 +12,7 @@ use App\Http\Controllers\apicontroller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/',  [apicontroller::class, 'index']);
+
+
+Route::post('/salvar',[apicontroller::class, 'store']);

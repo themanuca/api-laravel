@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\CRUD;
 use Illuminate\Http\Request;
 
 class apicontroller extends Controller
@@ -35,7 +35,8 @@ class apicontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = new CRUD;
+        return response("SALVOU", 200)->header('Content-type', 'text/plain');
     }
 
     /**
