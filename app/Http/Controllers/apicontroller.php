@@ -36,6 +36,14 @@ class apicontroller extends Controller
     public function store(Request $request)
     {
         $dados = new CRUD;
+
+        $dados->name = $request->nome_user;
+        $dados->cpf = $request->cpf_user;
+        $dados->sexo = $request->sexo_user;
+        $dados->endereco = $request->endereco_user;
+
+        $dados->save();
+        
         return response("SALVOU", 200)->header('Content-type', 'text/plain');
     }
 

@@ -9,7 +9,7 @@ class CRUD extends Model
 {
     protected $table = 'paciente';
     protected $fillables = [
-        'nome_user',
+        'name',
         'cpf_user',
         'sexo_user',
         'endereco_user'
