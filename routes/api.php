@@ -17,7 +17,8 @@ use App\Http\Controllers\apicontroller;
 
 Route::get('/',  [apicontroller::class, 'index']);
 Route::post('/salvar',[apicontroller::class, 'store']);
-
+Route::get('/editar/{id}',[apicontroller::class,'show']);
+Route::put('/up/{id}',[apicontroller::class, 'edit']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

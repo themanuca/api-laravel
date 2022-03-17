@@ -14,7 +14,9 @@ class apicontroller extends Controller
      */
     public function index()
     {
-        return "TUDO !";
+        $event =  Crud::all();
+        return response( $event, 200)->header('Content-type', 'text/plain');
+
     }
 
     /**
@@ -55,7 +57,9 @@ class apicontroller extends Controller
      */
     public function show($id)
     {
-        //
+        $dados = CRUD::findOrFail($id);
+        return response( $dados, 200)->header('Content-type', 'text/plain');
+
     }
 
     /**
