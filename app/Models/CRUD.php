@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class CRUD extends Model
 {
     protected $table = 'paciente';
-    protected $fillables = [
+    protected $fillable = [
         'name',
-        'cpf_user',
-        'sexo_user',
-        'endereco_user'
+        'cpf',
+        'sexo',
+        'endereco'
     ];
 }

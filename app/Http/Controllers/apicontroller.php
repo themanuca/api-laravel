@@ -70,7 +70,7 @@ class apicontroller extends Controller
      */
     public function edit($id)
     {
-        //
+       //
     }
 
     /**
@@ -80,9 +80,20 @@ class apicontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $dados = $this->CRUD->where(['id'=>$id])->update([
+            
+            $dados->name = $request->nome_user;
+            $dados->cpf = $request->cpf_user;
+            $dados->sexo = $request->sexo_user;
+            $dados->endereco = $request->endereco_user;
+
+            $dados->save();
+
+        ]);
+        // $dados = CRUD::findOrFail($id)->update($request->all());
+        return response($dados, 200);
     }
 
     /**
